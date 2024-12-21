@@ -46,13 +46,20 @@ const Carousel = () => {
     }
   };
 
+  // useEffect(() => {
+  //   intervalRef.current = setInterval(() => {
+  //     handleNextSlide();
+  //   }, 3000); 
+
+  //   return () => clearInterval(intervalRef.current);
+  // }, []); 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       handleNextSlide();
     }, 3000); 
 
     return () => clearInterval(intervalRef.current);
-  }, []); 
+  }, [handleNextSlide]); 
 
   return (
     <div className="relative w-full max-w-7xl mx-auto bg-gray-900 rounded-2xl overflow-hidden">
