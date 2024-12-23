@@ -13,6 +13,35 @@ import {
 import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 
+type Product = {
+  name: string;
+  image: string;
+  description: string;
+};
+
+const products: Product[] = [
+  {
+    name: 'Premium Bentonite Powder',
+    image: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/bentonite-specimens-inga-spence.jpg',
+    description: 'High-quality bentonite powder for various industrial applications.',
+  },
+  {
+    name: 'Drilling Grade Bentonite',
+    image: 'https://thumbs.dreamstime.com/z/bentonite-clay-powder-gray-color-isolated-white-background-displayed-loose-pile-against-clean-surface-showcasing-its-331682347.jpg?ct=jpeg',
+    description: 'Specially formulated bentonite for oil and gas drilling operations.',
+  },
+  {
+    name: 'Foundry Grade Bentonite',
+    image: 'https://th.bing.com/th/id/OIP.4Rf62RDuuM1FZC4bK2JNcwHaFj?w=234&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+    description: 'Bentonite powder optimized for metal casting and foundry applications.',
+  },
+  {
+    name: 'Cat Litter Grade Bentonite',
+    image: 'https://th.bing.com/th/id/OIP.Xl8xH9LcseFVSDTehU3ynQHaHq?w=177&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+    description: 'Highly absorbent bentonite for premium cat litter products.',
+  },
+];
+
 const FeatureCard = ({
   icon: Icon,
   title,
