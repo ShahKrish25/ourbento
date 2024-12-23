@@ -22,6 +22,16 @@ const nextConfig = {
                 hostname: 'cdn.shopify.com',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'www.jaredsdetours.com',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'pbs.twimg.com',
+                pathname: '/**',
+            },
             // Add more patterns as needed
         ],
     },
