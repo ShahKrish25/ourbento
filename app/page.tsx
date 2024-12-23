@@ -13,12 +13,6 @@ import {
 import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 
-// type Product = {
-//   name: string;
-//   image: string;
-//   description: string;
-// };
-
 const FeatureCard = ({
   icon: Icon,
   title,
@@ -34,7 +28,7 @@ const FeatureCard = ({
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
-    className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" // Changed from 'rounded-lg' to 'rounded-xl'
+    className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
   >
     <div className="flex items-center mb-4">
       <Icon className="h-8 w-8 text-indigo-600 mr-3" />
@@ -69,8 +63,6 @@ export default function Home() {
         />
 
         <div className="relative z-10">
-          {" "}
-          {/* Wrapper for content with z-index */}
           <motion.h1
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600"
             initial={{ y: -50 }}
@@ -194,8 +186,6 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-gray-200 dark:bg-gray-700 h-64 rounded-xl flex items-center justify-center">
-              {/* <video src="https://cdn.pixabay.com/video/2023/02/15/150875-799327606_large.mp4" autoPlay loop muted className="h-full w-full object-cover" style={{ borderRadius: '10px' }}>
-            </video> */}
               <video
                 src="https://cdn.pixabay.com/video/2023/02/15/150875-799327606_large.mp4"
                 autoPlay
@@ -209,7 +199,6 @@ export default function Home() {
                   transition: "filter 0.3s ease, transform 0.3s ease",
                 }}
               ></video>
-              {/* <span className="text-2xl text-gray-500 dark:text-gray-400">Quality Control Image</span> */}
             </div>
           </motion.div>
           <motion.div

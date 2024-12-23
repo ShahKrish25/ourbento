@@ -4,7 +4,14 @@ import { useState } from 'react'; // Import useState for managing modal state
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const products = [
+// Define the Product type
+type Product = {
+  name: string;
+  image: string;
+  description: string;
+};
+
+const products: Product[] = [
   {
     name: 'Premium Bentonite Powder',
     image: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/bentonite-specimens-inga-spence.jpg',
@@ -28,9 +35,9 @@ const products = [
 ];
 
 export default function Products() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const openModal = (product) => {
+  const openModal = (product: Product) => {
     setSelectedProduct(product);
   };
 
