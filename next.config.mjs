@@ -1,8 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['images.fineartamerica.com', 'thumbs.dreamstime.com', 'th.bing.com'], // Add other domains here if needed
-      },
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.fineartamerica.com',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'thumbs.dreamstime.com',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'th.bing.com',
+                pathname: '/**',
+            },
+            // Add more patterns as needed
+        ],
+    },
 };
 
 export default nextConfig;

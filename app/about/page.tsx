@@ -1,10 +1,18 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Users, Target, Leaf, Award, Globe, Recycle } from 'lucide-react'
+import React from "react";
+import { motion } from "framer-motion";
+import { Users, Target, Leaf, Award, Globe, Recycle } from "lucide-react";
 
-const AboutSection = ({ icon: Icon, title, description }) => (
+const AboutSection = ({
+  icon: Icon,
+  title,
+  description,
+}: {
+  icon: React.ComponentType;
+  title: string;
+  description: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -15,7 +23,7 @@ const AboutSection = ({ icon: Icon, title, description }) => (
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600 dark:text-gray-300">{description}</p>
   </motion.div>
-)
+);
 
 export default function AboutUs() {
   return (
@@ -34,7 +42,8 @@ export default function AboutUs() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-xl text-center mb-12 text-gray-600 dark:text-gray-300"
       >
-        We are dedicated to providing high-quality bentonite products for various industrial applications.
+        We are dedicated to providing high-quality bentonite products for
+        various industrial applications.
       </motion.p>
 
       <motion.div
@@ -43,14 +52,29 @@ export default function AboutUs() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mb-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
       >
-        <h2 className="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">Our Journey</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
+          Our Journey
+        </h2>
         <div className="space-y-6">
           {[
             { year: 2005, event: "BentoMinerals founded" },
-            { year: 2010, event: "Expanded operations to international markets" },
-            { year: 2015, event: "Launched innovative eco-friendly bentonite products" },
-            { year: 2020, event: "Achieved carbon-neutral status in all operations" },
-            { year: 2023, event: "Celebrating 18 years of excellence in bentonite solutions" }
+            {
+              year: 2010,
+              event: "Expanded operations to international markets",
+            },
+            {
+              year: 2015,
+              event: "Launched innovative eco-friendly bentonite products",
+            },
+            {
+              year: 2020,
+              event: "Achieved carbon-neutral status in all operations",
+            },
+            {
+              year: 2023,
+              event:
+                "Celebrating 18 years of excellence in bentonite solutions",
+            },
           ].map((item, index) => (
             <motion.div
               key={item.year}
@@ -59,7 +83,9 @@ export default function AboutUs() {
               transition={{ duration: 0.5, delay: 0.1 * index }}
               className="flex items-center"
             >
-              <div className="flex-shrink-0 w-24 font-bold text-indigo-600 dark:text-indigo-400">{item.year}</div>
+              <div className="flex-shrink-0 w-24 font-bold text-indigo-600 dark:text-indigo-400">
+                {item.year}
+              </div>
               <div className="flex-grow border-t border-gray-300 dark:border-gray-600 mx-4"></div>
               <div className="flex-shrink-0 w-2/3">{item.event}</div>
             </motion.div>
@@ -112,6 +138,5 @@ export default function AboutUs() {
         />
       </div>
     </div>
-  )
+  );
 }
-
