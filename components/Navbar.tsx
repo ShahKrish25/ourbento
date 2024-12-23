@@ -123,24 +123,25 @@ export default function Navbar() {
   )
 }
 
-function NavLink({ href, children, active }) {
+function NavLink({
+  href,
+  children,
+  active,
+}: {
+  href: string;
+  children: React.ReactNode;
+  active: boolean;
+}) {
   return (
     <Link
       href={href}
       className={`${
-        active
-          ? 'border-indigo-500 text-gray-900 dark:text-white'
-          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white'
-      } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-300 hover:scale-105`}
+        active ? "text-indigo-600" : "text-gray-600"
+      } hover:text-indigo-500 transition-colors duration-300`}
     >
-      <motion.span
-        whileHover={{ y: -2 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        {children}
-      </motion.span>
+      {children}
     </Link>
-  )
+  );
 }
 
 function MobileNavLink({ href, children, active }) {
