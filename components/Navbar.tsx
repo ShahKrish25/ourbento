@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={mounted && theme}
+                key={mounted ? theme : 'default-key'}
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
