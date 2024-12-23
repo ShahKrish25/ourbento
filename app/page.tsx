@@ -13,11 +13,11 @@ import {
 import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 
-type Product = {
-  name: string;
-  image: string;
-  description: string;
-};
+// type Product = {
+//   name: string;
+//   image: string;
+//   description: string;
+// };
 
 const FeatureCard = ({
   icon: Icon,
