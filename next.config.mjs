@@ -17,6 +17,11 @@ const nextConfig = {
                 hostname: 'th.bing.com',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'cdn.shopify.com',
+                pathname: '/**',
+            },
             // Add more patterns as needed
         ],
     },

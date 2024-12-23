@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const intervalRef = useRef(null); // To store the interval ID
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // To store the interval ID
 
   const slides = [
     {
@@ -30,13 +30,13 @@ const Carousel = () => {
     }
   ];
 
-  const handleNextSlide = () => {
+  const handleNextSlide = useCallback(() => {
     if (!isAnimating) {
       setIsAnimating(true);
       setCurrentSlide((prev) => (prev + 1) % slides.length);
       setTimeout(() => setIsAnimating(false), 500);
     }
-  };
+  }, [isAnimating, slides.length]);
 
   const handlePrevSlide = () => {
     if (!isAnimating) {
@@ -49,10 +49,14 @@ const Carousel = () => {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       handleNextSlide();
-    }, 3000); 
+    }, 3000);
 
-    return () => clearInterval(intervalRef.current);
-  }, []); 
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [handleNextSlide]);
 
   return (
     <div className="relative w-full max-w-7xl mx-auto bg-gray-900 rounded-2xl overflow-hidden">
