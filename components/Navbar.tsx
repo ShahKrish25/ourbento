@@ -144,23 +144,35 @@ function NavLink({
   );
 }
 
-function MobileNavLink({ href, children, active }) {
+function MobileNavLink({
+  href,
+  children,
+  active,
+}: {
+  href: string;
+  children: React.ReactNode;
+  active: boolean;
+}) {
   return (
     <motion.div
       variants={{
         open: { opacity: 1, y: 0 },
-        closed: { opacity: 0, y: 20 }
+        closed: { opacity: 0, y: 20 },
       }}
     >
       <Link
         href={href}
         className={`${
-          active ? 'bg-indigo-50 border-indigo-500 text-indigo-700 dark:bg-gray-700 dark:text-white' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+          active
+            ? 'bg-indigo-50 border-indigo-500 text-indigo-700 dark:bg-gray-700 dark:text-white'
+            : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
         } block pl-3 pr-4 py-2 border-l-4 text-sm sm:text-base font-medium transition-colors duration-300`}
       >
         {children}
       </Link>
     </motion.div>
-  )
+  );
 }
+
+export { NavLink, MobileNavLink };
 
