@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,10 +75,11 @@ const Carousel = () => {
           >
             {/* Image container with gradient overlay */}
             <div className="relative w-full h-full">
-              <img
+              <Image
                 src={slide.imageUrl}
                 alt={slide.alt}
-                className="w-full h-full object-cover object-center"
+                fill
+                className="object-cover object-center"
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
